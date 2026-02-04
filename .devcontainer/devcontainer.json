@@ -1,0 +1,21 @@
+{
+  "name": "ESP Matter v1.5 Development Container",
+  "build": {
+    "dockerfile": "Dockerfile.matter_1_5_0"
+  },
+  "workspaceFolder": "/root/Projects",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/root/Projects/${localWorkspaceFolderBasename},type=bind",
+  "runArgs": [
+    "--privileged",
+    "-v",
+    "/dev:/dev"
+  ],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools-extension-pack"
+      ]
+    }
+  }
+}

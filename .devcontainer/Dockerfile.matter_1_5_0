@@ -1,0 +1,10 @@
+FROM docker.1ms.run/espressif/esp-matter:release-v1.5_idf_v5.4.1
+
+RUN apt-get update && apt-get install -y \
+  zsh fish vim \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN chsh -s /usr/bin/zsh
+RUN printf 'source /opt/espressif/esp-idf/export.sh\n' >> ~/.zshrc
+RUN printf 'source /opt/espressif/esp-matter/export.sh\n' >> ~/.zshrc
