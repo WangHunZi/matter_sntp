@@ -86,8 +86,7 @@ static void DnsAddressCallback(otError aError, const otDnsAddressResponse *aResp
 {
     if (aError != OT_ERROR_NONE)
     {
-        // TODO: sntp callback
-        ESP_LOGD(TAG, "DNS query failed");
+        ESP_LOGE(TAG, "DNS query failed %d", aError);
         return;
     }
 
